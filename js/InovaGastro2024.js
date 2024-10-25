@@ -83,3 +83,15 @@ document.querySelectorAll('.botao').forEach(botao => {
         }
     })
 })
+
+document.getElementById('Finalizar').addEventListener('click', () => {
+    const finalizar = document.getElementById('Finalizar');
+    // Verifica se o botão está ativado antes de redirecionar
+    if (finalizar.classList.contains('ativado')) {
+        paginaPremio1();
+    }
+});
+
+function paginaPremio1() {
+    window.location.href = "/html/premio1.html";
+}
