@@ -12,7 +12,7 @@
     <div class="container">
         <header id="header_fase3">
             <div id="Titulo">
-                <h1 id="Fase3">InovaGastro 2024</h1>
+                <h1 id="Fase3">InovaGastro  2024</h1>
                 <div id="Bananas"><img src="/img/banana.svg"><img src="/img/banana.svg"><img src="/img/banana.svg">
                 </div>
             </div>
@@ -72,17 +72,17 @@
             <p>Lorem ipsum dolor sit amet consectetur. Tristique ornare amet eu fringilla?</p>
         </div>
         <div id="opcoesQuiz">
-            <button class="botao"><img src="/img/check.svg">
-                <p>Opção 1</p>
+            <button class="botao" data-correta="false"><img src="/img/check.svg">
+                <p class="Opção">Opção 1</p>
             </button>
-            <button class="botao"><img src="/img/check.svg">
-                <p>Opção 2</p>
+            <button class="botao" data-correta="false" ><img src="/img/check.svg">
+                <p class="Opção">Opção 2</p>
             </button>
-            <button class="botao"><img src="/img/check.svg">
-                <p>Opção 3</p>
+            <button class="botao" data-correta="true" ><img src="/img/check.svg">
+                <p class="Opção">Opção 3</p>
             </button>
-            <button class="botao"><img src="/img/check.svg">
-                <p>Opção 4</p>
+            <button class="botao" data-correta="false" ><img src="/img/check.svg">
+                <p class="Opção">Opção 4</p>
             </button>
         </div>
     </div>
@@ -93,8 +93,8 @@
         </div>
 
         <div class="botaofinalizar">
-            <div id="Finalizar">
-                <p>Finalizar</p> <img src="/img/Bloqueado.svg">
+            <div id="Finalizar" class="desativado">
+                <p>Finalizar</p> <img src="/img/Bloqueado.svg" id="statusImg">
             </div>
         </div>
     </div>

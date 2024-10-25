@@ -37,7 +37,7 @@ header {
 #Fase3 {
     color: var(--Secundaria-Accessible-Text-secondary-orange-text--2, #62230C);
     font-family: Poppins;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-style: normal;
     font-weight: 600;
     line-height: 1.75rem;
@@ -317,7 +317,6 @@ header {
     justify-content: center;
     align-items: center;
     margin-right: 10%;
-    cursor: no-drop;
 }
 
 #Finalizar {
@@ -329,8 +328,24 @@ header {
     gap: var(--XS, 4px);
     flex: 1 0 0;
     border-radius: var(--Pequeno, 8px);
-    background: var(--Grey-Gray-100, #C8C8C8);
 }
+
+.botaofinalizar {
+    cursor: not-allowed;
+}
+
+.botaofinalizar .ativado {
+    cursor: pointer;
+}
+
+.desativado {
+    background-color: #ccc;
+}
+
+.ativado {
+    background-color: #FFD65B;
+}
+
 
 @media (max-width: 600px) {
     body {

@@ -41,3 +41,45 @@ function voltarImagem() {
 }
 
 mostrarImagem(imagemAtual)
+
+//quiz
+
+const botoes = document.querySelectorAll('.botao')
+
+botoes.forEach(botao => {
+    botao.addEventListener('click', () => {
+        // Itera sobre todos os botões
+        botoes.forEach(b => {
+            const imagem = b.querySelector('img')
+            // Remove a classe 'selecionado' e restaura a imagem original
+            b.classList.remove('selecionado')
+            imagem.src = "/img/check.svg"
+        })
+
+        // Adiciona a classe 'selecionado' ao botão clicado
+        botao.classList.add('selecionado')
+        
+        // Altera a imagem do botão clicado
+        const imagemSelecionada = botao.querySelector('img')
+        imagemSelecionada.src = "/img/Botao_marcado.svg"
+    })
+})
+
+document.querySelectorAll('.botao').forEach(botao => {
+    botao.addEventListener('click', () => {
+        // Remover a classe "correta" de todos os botões
+        document.querySelectorAll('.botao').forEach(b => b.classList.remove('correta'))
+
+        // Marcar o botão selecionado
+        botao.classList.add('correta')
+
+        // Verificar se o botão selecionado é a opção correta
+        if (botao.dataset.correta === 'true') {
+            // Ativar o botão de finalizar
+            const finalizar = document.getElementById('Finalizar');
+            finalizar.classList.remove('desativado')
+            finalizar.classList.add('ativado')
+            document.getElementById('statusImg').src = "/img/Seta.svg"
+        }
+    })
+})
