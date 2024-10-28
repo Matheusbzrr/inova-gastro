@@ -67,18 +67,18 @@ const perguntas = [
     }
 ]
 
-let perguntaAtual;
+let perguntaAtual
 let ultimaPerguntaIndex = -1 // Armazena o índice da última pergunta
 
 function carregarPerguntaAleatoria() {
-    let indiceAleatorio;
+    let indiceAleatorio
 
     do {
         indiceAleatorio = Math.floor(Math.random() * perguntas.length);
-    } while (indiceAleatorio === ultimaPerguntaIndex); // Gera um novo índice se for igual à última
+    } while (indiceAleatorio === ultimaPerguntaIndex) // Gera um novo índice se for igual à última
 
     ultimaPerguntaIndex = indiceAleatorio; // Atualiza a última pergunta
-    perguntaAtual = perguntas[indiceAleatorio];
+    perguntaAtual = perguntas[indiceAleatorio]
 
     document.querySelector(".pergunta p").textContent = perguntaAtual.pergunta
     const botoes = document.querySelectorAll('.botao')
@@ -126,7 +126,7 @@ botoes.forEach(botao => {
 document.getElementById('Finalizar').addEventListener('click', () => {
     const finalizar = document.getElementById('Finalizar')
     if (finalizar.classList.contains('ativado')) {
-        paginaPremio1();
+        paginaPremio1()
     }
 })
 
