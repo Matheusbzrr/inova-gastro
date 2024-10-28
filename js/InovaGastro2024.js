@@ -74,10 +74,10 @@ function carregarPerguntaAleatoria() {
     let indiceAleatorio
 
     do {
-        indiceAleatorio = Math.floor(Math.random() * perguntas.length);
+        indiceAleatorio = Math.floor(Math.random() * perguntas.length)
     } while (indiceAleatorio === ultimaPerguntaIndex) // Gera um novo índice se for igual à última
 
-    ultimaPerguntaIndex = indiceAleatorio; // Atualiza a última pergunta
+    ultimaPerguntaIndex = indiceAleatorio // Atualiza a última pergunta
     perguntaAtual = perguntas[indiceAleatorio]
 
     document.querySelector(".pergunta p").textContent = perguntaAtual.pergunta
@@ -106,17 +106,17 @@ botoes.forEach(botao => {
             b.querySelector('img').src = "/InovaGastro/img/check.svg"
         });
 
-        botao.classList.add('selecionado');
-        botao.querySelector('img').src = "/InovaGastro/img/Botao_marcado.svg";
+        botao.classList.add('selecionado')
+        botao.querySelector('img').src = "/InovaGastro/img/Botao_marcado.svg"
 
-        botoes.forEach(b => b.classList.remove('correta'));
+        botoes.forEach(b => b.classList.remove('correta'))
         botao.classList.add('correta')
 
         if (botao.dataset.correta === 'true') {
-            const finalizar = document.getElementById('Finalizar');
+            const finalizar = document.getElementById('Finalizar')
             finalizar.classList.remove('desativado')
             finalizar.classList.add('ativado')
-            document.getElementById('statusImg').src = "/InovaGastro/img/Seta.svg";
+            document.getElementById('statusImg').src = "/InovaGastro/img/Seta.svg"
         } else {
             carregarPerguntaAleatoria()
         }
@@ -131,5 +131,5 @@ document.getElementById('Finalizar').addEventListener('click', () => {
 })
 
 function paginaPremio1() {
-    window.location.href = "/InovaGastro/html/premio1.html";
+    window.location.href = "/InovaGastro/html/premio1.html"
 }
