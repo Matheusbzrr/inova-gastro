@@ -61,7 +61,7 @@ const perguntas = [
     {
         pergunta: "Nova pergunta exemplo 3",
         opcoes: [
-            { texto: "Opção X", correta: false },
+            { texto: "Opção X", correta: true },
             { texto: "Opção Y", correta: false }
         ]
     }
