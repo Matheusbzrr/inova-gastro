@@ -43,55 +43,93 @@ function voltarImagem() {
 mostrarImagem(imagemAtual)
 
 //quiz
+const perguntas = [
+    {
+        pergunta: "Nova pergunta exemplo 1",
+        opcoes: [
+            { texto: "Opção 1", correta: false },
+            { texto: "Opção 2", correta: true }
+        ]
+    },
+    {
+        pergunta: "Nova pergunta exemplo 2",
+        opcoes: [
+            { texto: "Opção A", correta: false },
+            { texto: "Opção B", correta: true }
+        ]
+    },
+    {
+        pergunta: "Nova pergunta exemplo 3",
+        opcoes: [
+            { texto: "Opção X", correta: false },
+            { texto: "Opção Y", correta: false }
+        ]
+    }
+]
+
+let perguntaAtual;
+let ultimaPerguntaIndex = -1 // Armazena o índice da última pergunta
+
+function carregarPerguntaAleatoria() {
+    let indiceAleatorio;
+
+    do {
+        indiceAleatorio = Math.floor(Math.random() * perguntas.length);
+    } while (indiceAleatorio === ultimaPerguntaIndex); // Gera um novo índice se for igual à última
+
+    ultimaPerguntaIndex = indiceAleatorio; // Atualiza a última pergunta
+    perguntaAtual = perguntas[indiceAleatorio];
+
+    document.querySelector(".pergunta p").textContent = perguntaAtual.pergunta
+    const botoes = document.querySelectorAll('.botao')
+
+    botoes.forEach((botao, index) => {
+        botao.querySelector("p").textContent = perguntaAtual.opcoes[index].texto
+        botao.dataset.correta = perguntaAtual.opcoes[index].correta
+        botao.classList.remove('correta', 'selecionado')
+        botao.querySelector('img').src = "/InovaGastro/img/check.svg"
+    });
+
+    const finalizar = document.getElementById('Finalizar')
+    finalizar.classList.add('desativado')
+    finalizar.classList.remove('ativado')
+    document.getElementById('statusImg').src = "/InovaGastro/img/Bloqueado.svg"
+}
+
+carregarPerguntaAleatoria()
 
 const botoes = document.querySelectorAll('.botao')
-
 botoes.forEach(botao => {
     botao.addEventListener('click', () => {
-        // Itera sobre todos os botões
         botoes.forEach(b => {
-            const imagem = b.querySelector('img')
-            // Remove a classe 'selecionado' e restaura a imagem original
             b.classList.remove('selecionado')
-            imagem.src = "/img/check.svg"
-        })
+            b.querySelector('img').src = "/InovaGastro/img/check.svg"
+        });
 
-        // Adiciona a classe 'selecionado' ao botão clicado
-        botao.classList.add('selecionado')
-        
-        // Altera a imagem do botão clicado
-        const imagemSelecionada = botao.querySelector('img')
-        imagemSelecionada.src = "/img/Botao_marcado.svg"
-    })
-})
+        botao.classList.add('selecionado');
+        botao.querySelector('img').src = "/InovaGastro/img/Botao_marcado.svg";
 
-document.querySelectorAll('.botao').forEach(botao => {
-    botao.addEventListener('click', () => {
-        // Remover a classe "correta" de todos os botões
-        document.querySelectorAll('.botao').forEach(b => b.classList.remove('correta'))
-
-        // Marcar o botão selecionado
+        botoes.forEach(b => b.classList.remove('correta'));
         botao.classList.add('correta')
 
-        // Verificar se o botão selecionado é a opção correta
         if (botao.dataset.correta === 'true') {
-            // Ativar o botão de finalizar
             const finalizar = document.getElementById('Finalizar');
             finalizar.classList.remove('desativado')
             finalizar.classList.add('ativado')
-            document.getElementById('statusImg').src = "/img/Seta.svg"
+            document.getElementById('statusImg').src = "/InovaGastro/img/Seta.svg";
+        } else {
+            carregarPerguntaAleatoria()
         }
     })
 })
 
 document.getElementById('Finalizar').addEventListener('click', () => {
-    const finalizar = document.getElementById('Finalizar');
-    // Verifica se o botão está ativado antes de redirecionar
+    const finalizar = document.getElementById('Finalizar')
     if (finalizar.classList.contains('ativado')) {
         paginaPremio1();
     }
-});
+})
 
 function paginaPremio1() {
-    window.location.href = "/html/premio1.html";
+    window.location.href = "/InovaGastro/html/premio1.html";
 }
