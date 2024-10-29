@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoceForma</title>
+    <link rel="stylesheet" href="/css/DoceForma.css">
+</head>
+
+<body>
+    <div class="container">
+        <header id="header_fase3">
+            <div id="Titulo">
+                <h1 id="Fase2">Doce Forma</h1>
+                <div id="Bananas">
+                    <img src="/img/Banana d.svg">
+                    <img src="/img/banana d.svg">
+                    <img src="/img/banana.svg">
+                </div>
+            </div>
+        </header>
+
+        <section id="section_fase1">
+            <div id="parte1">
+                <p>Lorem ipsum dolor sit amet consectetur. Eget sed sed consequat netus ultrices mattis. Mauris
+                    vulputate sed tempor integer ornare adipiscing.</p>
+            </div>
+
+            <div id="carrossel">
+                <button class="VoltarImg setaL" onclick="voltarImagem()">
+                    <img src="/img/seta.svg">
+                </button>
+
+                <div class="imagens">
+                    <img src="/img/carrosselmg/Group 7 (1).svg" alt="Imagem 1" class="Ativo">
+                    <img src="/img/carrosselmg/Group 8 (1).svg" alt="Imagem 2">
+                    <img src="/img/carrosselmg/Group 9 (1).svg" alt="Imagem 3">
+                    <img src="/img/carrosselmg/Group 10.svg" alt="Imagem 4">
+                    <img src="/img/carrosselmg/Group 11.svg" alt="Imagem 5">
+                </div>
+
+                <button class="AvancarImg setaR" onclick="proximaImagem()">
+                    <img src="/img/seta2.svg">
+                </button>
+
+                <div class="espacoimg">
+                    <img class="Indicador Ativo" src="/img/Ellipse 1.svg">
+                    <img class="Indicador" src="/img/Ellipse 1.svg">
+                    <img class="Indicador" src="/img/Ellipse 1.svg">
+                    <img class="Indicador" src="/img/Ellipse 1.svg">
+                    <img class="Indicador" src="/img/Ellipse 1.svg">
+                </div>
+            </div>
+
+            <div id="parte2">
+                <p>Lorem ipsum dolor sit amet consectetur. Eget sed sed consequat netus ultrices mattis. Mauris
+                    vulputate sed tempor integer ornare adipiscing.</p>
+            </div>
+        </section>
+
+        <div id="quizCompleto">
+            <div id="headerQuiz">
+                <div id="tituloQuiz">
+                    <h2>QUIZ</h2>
+                </div>
+                <div id="fasesQuiz">
+                    <h3>Fase:</h3>
+                    <h3>2/3</h3>
+                </div>
+            </div>
+
+            <div class="pergunta">
+                <p>Lorem ipsum dolor sit amet consectetur. Tristique ornare amet eu fringilla?</p>
+            </div>
+
+            <div id="opcoesQuiz">
+                <button class="botao"><img src="/img/botão.svg">
+                    <p>Opção 1</p>
+                </button>
+                <button class="botao"><img src="/img/botão.svg">
+                    <p>Opção 2</p>
+                </button>
+            </div>
+        </div>
+        <div id="botoesInt">
+            <div id="botaoVoltar" onclick="voltarPagina()">
+                <img class="Voltar" src="/img/Voltar.svg">
+                <p>Voltar</p>
+            </div>
+
+            <div class="botaofinalizar">
+                <div id="Finalizar" class="desativado">
+                    <p>Continuar</p>
+                    <img src="/img/Bloqueado.svg" id="statusImg">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/DoceForma.js"></script>
+</body>
+
+</html>

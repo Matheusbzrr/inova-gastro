@@ -131,9 +131,9 @@ document.getElementById('Finalizar').addEventListener('click', () => {
 })
 
 function paginaPremio1() {
-    window.location.href = "/html/premio1.html"
+    window.location.href = "/html/InovaGastro2024.html"
 }
 
 function voltarPagina() {
-    window.location.href = "/html/DoceForma.html"
+    window.location.href = "/html/InovaGastro2023.html"
 }

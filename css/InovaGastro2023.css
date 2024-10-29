@@ -34,10 +34,10 @@ header {
   flex-shrink: 0;
 }
 
-#Fase3 {
+#Fase1 {
   color: var(--Secundaria-Accessible-Text-secondary-orange-text--2, #62230C);
   font-family: Poppins;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-style: normal;
   font-weight: 600;
   line-height: 1.75rem;
@@ -161,7 +161,7 @@ header {
   width: 100%;
   max-width: 24.375rem;
   width: 366px;
-  height: 486px;
+  height: auto;
   flex-shrink: 0;
   border-radius: var(--Pequeno, 8px);
   border: 1px solid var(--Secundaria-Borders-and-Separators-secondary-orange-border--2, #FFA17F);
@@ -226,8 +226,6 @@ header {
 .pergunta {
   display: inline-flex;
   padding: var(--Medio, 12px) var(--Pequeno, 8px);
-  justify-content: center;
-  align-items: center;
   gap: var(--Nenhum, 0px);
 }
 
@@ -243,6 +241,9 @@ header {
 }
 
 #opcoesQuiz {
+  position: relative;
+  right: 15px;
+  bottom: 10px;
   width: 100%;
   max-width: 24.375rem;
   display: flex;
@@ -313,11 +314,10 @@ header {
 
 .botaofinalizar {
   display: flex;
-  width: 142px;
+  width: 17.75rem;
   justify-content: center;
   align-items: center;
-  margin-right: 10%;
-  cursor: no-drop;
+  margin-left: 20px;
 }
 
 #Finalizar {
@@ -329,19 +329,60 @@ header {
   gap: var(--XS, 4px);
   flex: 1 0 0;
   border-radius: var(--Pequeno, 8px);
-  background: var(--Grey-Gray-100, #C8C8C8);
 }
+
+.botaofinalizar {
+  cursor: not-allowed;
+}
+
+.botaofinalizar .ativado {
+  cursor: pointer;
+}
+
+.desativado {
+  background-color: #ccc;
+}
+
+.ativado {
+  background-color: #FFD65B;
+}
+
 
 @media (max-width: 600px) {
   body {
-      width: 100vw;
+    width: 100vw;
   }
 
-  #Fase3,
+  #Fase1,
   #tituloQuiz h2,
   .pergunta p,
   #botaoVoltar p,
   .botao p {
-      font-size: 1rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+
+  body,
+  .container,
+  header,
+  #Titulo,
+  #Bananas,
+  #parte1,
+  #parte2,
+  #quizCompleto,
+  #headerQuiz,
+  #opcoesQuiz,
+  .botao,
+  #botoesInt,
+  #botaoVoltar,
+  .botaofinalizar {
+    max-width: 100vw;
+  }
+
+  .imagens img,
+  .Indicador {
+    max-width: 100%;
   }
 }
