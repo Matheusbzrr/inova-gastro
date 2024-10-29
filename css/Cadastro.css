@@ -19,6 +19,21 @@ body {
     color: #62230C;
 }
 
+.faixa h1 {
+    display: flex;
+    width: 7.25rem;
+    height: 3.625rem;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--Secundaria-Accessible-Text-secondary-orange-text--2, #62230C);
+    font-family: Poppins;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.75rem;
+    justify-self: center;
+    margin-top: 30px;
+}
 
 .texto {
     margin-left: 30px;
