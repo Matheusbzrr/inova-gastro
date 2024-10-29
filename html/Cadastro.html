@@ -18,18 +18,20 @@
             <div class="ParagrafoNome">
                 <p>Nome</p>
             </div>
-            <input type="nome" placeholder="Digite aqui..." class="input-box">
+            <input id="nome" type="nome" placeholder="Digite aqui..." class="input-box">
         </div>
         <div class="email">
             <div class="ParagrafoEmail">
                 <p>Email</p>
             </div>
-            <input type="email" placeholder="Digite aqui..." class="input-box">
+            <input id="email" type="email" placeholder="Digite aqui..." class="input-box">
+            <div id="mensagem"></div>
         </div>
-        <button class="button">
+        <button id="loginButton" class="button" onclick="cadastro()">
             Continuar <img src="/img/arrow-right-short.svg">
         </button>
     </div>
+    <script src="/js/Cadastro.js"></script>
 </body>
 
 </html>

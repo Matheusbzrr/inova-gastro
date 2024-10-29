@@ -50,7 +50,7 @@ body {
     display: flex;
     width: 20.625rem;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     gap: var(--2XS, 0.125rem);
 }
 
@@ -79,10 +79,32 @@ body {
     height: 2.5rem;
     padding: var(--Pequeno, 0.5rem) var(--Medio, 0.75rem);
     flex-direction: column;
-    justify-content: center;
     align-items: flex-start;
     gap: var(--2XS, 0.125rem);
     align-self: stretch;
+}
+
+#mensagem {
+    position: relative;
+    bottom: 20px;
+    display: flex;
+    width: 252px;
+    padding: var(--2XS, 2px);
+    gap: var(--XS, 4px);
+}
+
+#mensagem span {
+    margin-top: 8px;
+}
+
+#mensagem p {
+    flex: 1 0 0;
+    color: var(--Semantic-Colors-Error-error-red-300, #FF3934);
+    font-family: Poppins;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
 }
 
 .nome {
