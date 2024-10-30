@@ -1,71 +1,84 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
-    background: var(--Primria-background-primary-yellow-bg-2, #FFFAE9);
+    background: #FFFAE9;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; 
-    overflow: hidden; 
-    max-width: auto;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
 .container {
-    align-items: center;
+    margin-left: 35px;
+    padding: 0;
+    width: min(100%, 24.375rem);
 }
 
 .titulo {
-    padding: 0px 50px 0px;
-    font-size: 6vw; 
     color: #62230C;
-    margin: 0; 
+    margin-top: 100px;
+    display: inline-flex;
+    padding: var(--Pequeno, 0.5rem);
+    justify-content: center;
+    align-items: center;
+    gap: var(--Nenhum, 0rem);
+}
+
+.titulo h1 {
+    color: #62230C;
+    font-family: Poppins;
+    font-size: 1.8125rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2.25rem;
 }
 
 .descricao {
-    padding: 0px 46px 0px;
-    font-size: 4.5vw;
-    color: #46391D;
-    margin: 10% 0; 
-    margin-top: 5.5vw;
-    text-align: left;
-    line-height: 1.4;
-    position: static;
+    display: flex;
+    width: min(100%, 20.625rem);
+    height: 5.5rem;
+    padding: var(--Medio, 0.75rem) var(--Pequeno, 0.5rem);
+    justify-content: center;
+    align-items: center;
+    gap: var(--Nenhum, 0rem);
+    flex-shrink: 0;
 }
 
 .pergunta {
-    font-weight: bold;
-    text-align: center;
-    margin: 10px ; 
-    margin-top: 1px;
-    font-size: 4.5vw; 
+    display: inline-flex;
+    padding: var(--Pequeno, 0.5rem);
+    justify-content: center;
+    align-items: center;
+    gap: var(--Nenhum, 0rem);
     color: #62230C;
+    width: min(100%, 17.75rem);
+    /* Limita a largura */
+    text-align: center;
 }
 
 .button {
     display: flex;
-    width: 60%; 
-    height: 5.5vh; 
+    width: min(100%, 17.75rem);
+    height: 1.5rem;
+    padding: var(--Grande, 1rem);
     justify-content: center;
     align-items: center;
-    gap: 4px;
+    gap: var(--XS, 0.25rem);
     flex-shrink: 0;
-    background-color: #FFD65B;
-    border-radius: 8px;
-    border-width: 0px;
-    margin: 10px auto;
-    margin-top: 17vw;
-    font-size: 4vw; 
-    cursor: pointer;  
+    border-radius: var(--Pequeno, 0.5rem);
+    background: #FFD65B;
     text-decoration: none;
-    color: var(--Primria-Accessible-Text-primary-yellow-text--2, #46391D);
+    color: #46391D;
     font-family: Poppins;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 24px;
+    line-height: 1.5rem;
+    margin-top: 20%;
 }
 
 .button:hover {
-    background-color: #f0c14b; 
+    background-color: #f0c14b;
 }
