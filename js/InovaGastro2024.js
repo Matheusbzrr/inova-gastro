@@ -144,7 +144,7 @@ botoes.forEach(botao => {
 document.getElementById('Finalizar').addEventListener('click', () => {
     const finalizar = document.getElementById('Finalizar')
     if (finalizar.classList.contains('ativado')) {
-        paginaPremio1()
+        paginaPremio()
     }
 })
 
