@@ -48,37 +48,47 @@ const perguntas = [
         pergunta: "Nova pergunta exemplo 1",
         opcoes: [
             { texto: "Opção 1", correta: false },
-            { texto: "Opção 2", correta: true }
+            { texto: "Opção 2", correta: true },
+            { texto: "Opção 3", correta: false }
         ]
     },
     {
         pergunta: "Nova pergunta exemplo 2",
         opcoes: [
             { texto: "Opção A", correta: false },
-            { texto: "Opção B", correta: true }
+            { texto: "Opção B", correta: true },
+            { texto: "Opção C", correta: false }
         ]
     },
     {
         pergunta: "Nova pergunta exemplo 3",
         opcoes: [
             { texto: "Opção X", correta: true },
-            { texto: "Opção Y", correta: false }
+            { texto: "Opção Y", correta: false },
+            { texto: "Opção Z", correta: false }
         ]
     }
 ]
 
 let perguntaAtual
-let ultimaPerguntaIndex = -1 // Armazena o índice da última pergunta
+let ultimaPerguntaIndex = -1
+let erros = 0
+
+function mostrarPopup() {
+    window.location.href = "/html/Reiniciar.html"
+}
 
 function carregarPerguntaAleatoria() {
     let indiceAleatorio
 
     do {
         indiceAleatorio = Math.floor(Math.random() * perguntas.length)
-    } while (indiceAleatorio === ultimaPerguntaIndex) // Gera um novo índice se for igual à última
+    } while (indiceAleatorio === ultimaPerguntaIndex)
 
-    ultimaPerguntaIndex = indiceAleatorio // Atualiza a última pergunta
+    ultimaPerguntaIndex = indiceAleatorio
     perguntaAtual = perguntas[indiceAleatorio]
+
+    embaralharArray(perguntaAtual.opcoes)
 
     document.querySelector(".pergunta p").textContent = perguntaAtual.pergunta
     const botoes = document.querySelectorAll('.botao')
@@ -88,7 +98,7 @@ function carregarPerguntaAleatoria() {
         botao.dataset.correta = perguntaAtual.opcoes[index].correta
         botao.classList.remove('correta', 'selecionado')
         botao.querySelector('img').src = "/img/check.svg"
-    });
+    })
 
     const finalizar = document.getElementById('Finalizar')
     finalizar.classList.add('desativado')
@@ -101,24 +111,32 @@ carregarPerguntaAleatoria()
 const botoes = document.querySelectorAll('.botao')
 botoes.forEach(botao => {
     botao.addEventListener('click', () => {
+        if (erros >= 3) {
+            mostrarPopup()
+            return
+        }
+
         botoes.forEach(b => {
             b.classList.remove('selecionado')
             b.querySelector('img').src = "/img/check.svg"
-        });
+        })
 
         botao.classList.add('selecionado')
         botao.querySelector('img').src = "/img/Botao_marcado.svg"
-
-        botoes.forEach(b => b.classList.remove('correta'))
-        botao.classList.add('correta')
 
         if (botao.dataset.correta === 'true') {
             const finalizar = document.getElementById('Finalizar')
             finalizar.classList.remove('desativado')
             finalizar.classList.add('ativado')
             document.getElementById('statusImg').src = "/img/Vector.png"
+            erros = 0
         } else {
-            carregarPerguntaAleatoria()
+            erros++
+            if (erros >= 3) {
+                mostrarPopup()
+            } else {
+                carregarPerguntaAleatoria()
+            }
         }
     })
 })
@@ -130,8 +148,17 @@ document.getElementById('Finalizar').addEventListener('click', () => {
     }
 })
 
-function paginaPremio1() {
-    window.location.href = "/html/premio1.html"
+function embaralharArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1))
+            ;[array[i], array[j]] = [array[j], array[i]]
+    }
+}
+
+function paginaPremio() {
+    const paginas = ["/html/premio1.html", "/html/premio2.html"]
+    const paginaEscolhida = paginas[Math.floor(Math.random() * paginas.length)]
+    window.location.href = paginaEscolhida
 }
 
 function voltarPagina() {
