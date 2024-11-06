@@ -166,7 +166,7 @@ header {
   border-radius: var(--Pequeno, 8px);
   border: 1px solid var(--Secundaria-Borders-and-Separators-secondary-orange-border--2, #FFA17F);
   background: var(--Secundaria-background-secondary-orange-bg-1, #FFFCFB);
-  margin-left: 3%;
+  margin-left: 1.5%;
 }
 
 #headerQuiz {
