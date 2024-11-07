@@ -1,25 +1,37 @@
 <!DOCTYPE html>
-<html lang="Pt_br">
+<html lang="pt_br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parabens!</title>
-    <link rel="stylesheet" href="/css/Premio1.css">
+    <title>Premio!!</title>
+    <link rel="stylesheet" href="/css/Premio2.css">
 </head>
 
 <body>
     <header>
-        <h1>Párabens!! 🏆</h1>
+        <h1>Parabens!!🏆</h1>
     </header>
     <section>
-        <p>Lorem ipsum dolor sit amet consectetur. Eget sed sed consequat netus ultrices mattis.</p>
+        <div class="containerMaior">
+            <p>Parabens!! Você ganhou um super cupom </p>
+            <div class="container">
+                <img src="/img/banana media.svg"><img src="/img/banana grande.svg"><img src="/img/banana media.svg">
+            </div>
+            <p>Clique abaixo para resgatar </p>
+        </div>
     </section>
+    <button onclick="Resgatar()">Resgatar</button>
     <footer>
         <h2>Redes Sociais</h2>
         <p>Instagram: @xxxxx</p>
     </footer>
-
+    <script>
+        alert("Parabéns! Você desbloqueou um prêmio incrível 🎉!!Clique abaixo para resgatar um prêmio cheio de sabor 🤩✌")
+        function Resgatar() {
+            window.location.href = "Resgatado.html"
+        }
+    </script>
 </body>
 
 </html>

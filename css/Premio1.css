@@ -40,11 +40,45 @@ section {
     padding: 12px;
 }
 
-section p {
-    color: #372C15;
-    font-family: 'Poppins', sans-serif;
-    font-size: 4vw;
-    line-height: 1.5;
+.container {
+    display: inline-flex;
+    padding: var(--Grande, 1rem);
+    align-items: center;
+    gap: var(--Pequeno, 0.5rem);
+    border-radius: var(--Pequeno, 0.5rem);
+    border: 1px solid var(--Primria-Borders-and-Separators-primary-yellow-border--3, #D9A936);
+    background: var(--Neutros-White, #FFF);
+}
+
+.containerMaior p {
+    flex: 1 0 0;
+    color: var(--Primria-Accessible-Text-primary-yellow-text--3, #372C15);
+    font-family: Poppins;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem;
+}
+
+button {
+    display: flex;
+    width: 17.75rem;
+    height: 3.5rem;
+    padding: var(--Grande, 1rem);
+    justify-content: center;
+    align-items: center;
+    gap: var(--XS, 0.25rem);
+    flex-shrink: 0;
+    border-radius: var(--Pequeno, 0.5rem);
+    background: var(--Primria-Solid-Colors-primary-yellow-solid-1, #FFD65B);
+    color: var(--Primria-Accessible-Text-primary-yellow-text--2, #46391D);
+    font-family: Poppins;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem;
+    border: none;
+    cursor: pointer;
 }
 
 footer {

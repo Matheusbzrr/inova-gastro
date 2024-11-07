@@ -1,71 +1,35 @@
-//carrossel de imagens
-let imagemAtual = 0
-const imagens = document.querySelectorAll(".imagens img")
-const indicador = document.querySelectorAll(".Indicador")
-let voltar = document.querySelector(".VoltarImg")
-let proximo = document.querySelector(".AvancarImg")
 
-function mostrarImagem(index) {
-    if (imagens.length > 0) {
-        imagens.forEach((Imagem, i) => {
-            Imagem.classList.remove("Ativo")//remove a classe "Ativo" colocada sobre a imagem ativa
-            indicador[i].classList.remove("Ativo")//remove a classe "Ativo" colocada sobre o indicador ativo
-            if (i === index) {
-                Imagem.classList.add("Ativo")//adiciona a classe "Ativo" na imagem atual
-                indicador[i].classList.add("Ativo")//adiciona a classe "Ativo" no indicador atual
-            }
-        })
-    }
-    //desativar o botão de voltar quando tiver na primeira imagem
-    if (index === 0) {
-        voltar.disabled = true;
-    } else {
-        voltar.disabled = false;
-    }
-    //desativar o botão de avançar imagem quando estiver na ultima imagem
-    if (index === imagens.length - 1) {
-        proximo.disabled = true;
-    } else {
-        proximo.disabled = false;
-    }
-}
-
-function proximaImagem() {
-    imagemAtual = (imagemAtual + 1) % imagens.length //adicionar +1 na variavel das imagens para avançar no carrossel
-    mostrarImagem(imagemAtual)//ligar a função mostrarImagem para mostrar a imagem
-}
-
-function voltarImagem() {
-    imagemAtual = (imagemAtual - 1) % imagens.length //subitrair -1 na variavel das imagens para voltar no carrossel
-    mostrarImagem(imagemAtual)
-}
-
-mostrarImagem(imagemAtual)
-
-//quiz
 const perguntas = [
     {
-        pergunta: "Nova pergunta exemplo 1",
+        pergunta: `Qual foi a sugestão do professor André no REC'n'Play 2023 para o projeto "Doce Forma"? `,
         opcoes: [
-            { texto: "Opção 1", correta: false },
-            { texto: "Opção 2", correta: true },
-            { texto: "Opção 3", correta: false }
+            { texto: "Fazer uma exposição internacional ", correta: false },
+            { texto: "Entrar no edital de incubação da i.de.i.a.S ", correta: true },
+            { texto: "Desenvolver mais sobremesas", correta: false }
         ]
     },
     {
-        pergunta: "Nova pergunta exemplo 2",
+        pergunta: `Em que evento o projeto "Doce Forma" foi apresentado inicialmente?`,
         opcoes: [
-            { texto: "Opção A", correta: false },
-            { texto: "Opção B", correta: true },
-            { texto: "Opção C", correta: false }
+            { texto: "SENAC Experience", correta: false },
+            { texto: "REC'n'Play 2023", correta: true },
+            { texto: "Campus Party", correta: false }
         ]
     },
     {
-        pergunta: "Nova pergunta exemplo 3",
+        pergunta: "Qual foi uma das aulas mais importantes mencionadas pelo criador do projeto? ",
         opcoes: [
-            { texto: "Opção X", correta: true },
-            { texto: "Opção Y", correta: false },
-            { texto: "Opção Z", correta: false }
+            { texto: "Aula sobre contesto jurídico", correta: true },
+            { texto: "Aula sobre design de produto ", correta: false },
+            { texto: "Aula de marketing digital", correta: false }
+        ]
+    },
+    {
+        pergunta: "Qual professor foi mencionado como um grande apoio para o criador do projeto?  ",
+        opcoes: [
+            { texto: "Professor André ", correta: true },
+            { texto: "Professor Robison Lustosa  ", correta: false },
+            { texto: "rofessor Cristianne Boulitreau", correta: false }
         ]
     }
 ]

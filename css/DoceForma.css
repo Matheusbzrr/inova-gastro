@@ -14,7 +14,7 @@ body {
 
 header {
   display: flex;
-  width: 24.375rem;
+  width: 533px;
   padding: 3.25rem 0.75rem 2.875rem 0.75rem;
   justify-content: center;
   align-items: flex-start;
@@ -34,13 +34,20 @@ header {
   flex-shrink: 0;
 }
 
-#Fase2 {
-  color: var(--Secundaria-Accessible-Text-secondary-orange-text--2, #62230C);
-  font-family: Poppins;
-  font-size: 1.4rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 1.75rem;
+#Fase1 {
+  color: var(--Secundaria-Accessible-Text-primary-yellow-text--3, #4E1D0B);
+font-family: Poppins;
+font-size: 24px;
+font-style: normal;
+font-weight: 600;
+line-height: 28px;
+}
+section img {
+  width: 533px;
+height: 500px;
+margin-top: 10px;
+margin-bottom: 10px;
+align-self: center;
 }
 
 #Bananas {
@@ -158,6 +165,7 @@ header {
 }
 
 #quizCompleto {
+  align-self: center;
   width: 100%;
   max-width: 24.375rem;
   width: 366px;
@@ -166,7 +174,7 @@ header {
   border-radius: var(--Pequeno, 8px);
   border: 1px solid var(--Secundaria-Borders-and-Separators-secondary-orange-border--2, #FFA17F);
   background: var(--Secundaria-background-secondary-orange-bg-1, #FFFCFB);
-  margin-left: 1.5%;
+  margin-left: 20%;
 }
 
 #headerQuiz {
@@ -280,7 +288,7 @@ header {
   display: flex;
   flex-flow: row wrap;
   margin-top: 8%;
-  margin-left: 7%;
+  margin-left: 20%;
   justify-content: space-between;
   flex-shrink: 0;
 
@@ -347,42 +355,194 @@ header {
   background-color: #FFD65B;
 }
 
-
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   body {
-    width: 100vw;
+    max-width: 100%;
+    height: auto;
   }
 
-  #Fase2,
-  #tituloQuiz h2,
-  .pergunta p,
-  #botaoVoltar p,
-  .botao p {
-    font-size: 1rem;
+  header {
+    width: 100%;
+    padding: 1.5rem 1rem;
+    justify-content: center;
+  }
+
+  #Titulo {
+    padding: 1rem;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #Fase1 {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  section img {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  #Bananas {
+    width: 80%;
+    margin-left: 10%;
+  }
+
+  #parte1, #parte2 {
+    margin-left: 5%;
+    width: 90%;
+    font-size: 0.875rem;
+    line-height: 1.2rem;
+  }
+
+  #carrossel {
+    width: 90%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .imagens img {
+    width: 100%;
+  }
+
+  .VoltarImg, .AvancarImg {
+    padding: 12px;
+  }
+
+  .Indicador {
+    height: 6px;
+    width: 6px;
+  }
+
+  #quizCompleto {
+    margin: 0 auto;
+  }
+
+  #headerQuiz {
+    justify-content: center;
+  }
+
+  #tituloQuiz h2 {
+    font-size: 18px;
+  }
+
+  .pergunta p {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  #opcoesQuiz {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .botao {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+  }
+
+
+  .botaofinalizar .ativado {
+    cursor: pointer;
+  }
+
+  .ativado {
+    background-color: #FFD65B;
   }
 }
 
-@media (max-width: 768px) {
-
-  body,
-  .container,
-  header,
-  #Titulo,
-  #Bananas,
-  #parte1,
-  #parte2,
-  #quizCompleto,
-  #headerQuiz,
-  #opcoesQuiz,
-  .botao,
-  #botoesInt,
-  #botaoVoltar,
-  .botaofinalizar {
-    max-width: 100vw;
+/* Media query para dispositivos extra pequenos (máximo de 480px) */
+@media (max-width: 480px) {
+  body {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
   }
 
-  .imagens img,
-  .Indicador {
+  header {
+    padding: 1rem;
+    width: 100%;
+  }
+
+  #Titulo {
+    width: 100%;
     max-width: 100%;
+    padding: 0.5rem;
+  }
+
+  #Fase1 {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  section img {
+    width: 100%;
+    height: auto;
+  }
+
+  #Bananas {
+    width: 80%;
+    margin-left: 10%;
+    font-size: 12px;
+  }
+
+  #parte1, #parte2 {
+    width: 90%;
+    font-size: 0.75rem;
+    line-height: 1.2rem;
+  }
+
+  #carrossel {
+    width: 100%;
+  }
+
+  .imagens img {
+    width: 100%;
+  }
+
+  .VoltarImg, .AvancarImg {
+    padding: 10px;
+  }
+
+  .Indicador {
+    height: 5px;
+    width: 5px;
+  }
+
+  #quizCompleto {
+    width: 100%;
+    padding: 10px;
+  }
+
+  #headerQuiz {
+  width: 100%;
+  }
+
+  #tituloQuiz h2 {
+    font-size: 16px;
+  }
+
+  .pergunta p {
+    width: 100%;
+  }
+
+
+  .botao {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+  }
+
+.botaofinalizar {
+  position: relative;
+  right: 40px;
+  }
+
+  #botaoVoltar {
+    position: relative;
+    right: 70px;
   }
 }

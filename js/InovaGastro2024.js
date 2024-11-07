@@ -1,73 +1,37 @@
-//carrossel de imagens
-let imagemAtual = 0
-const imagens = document.querySelectorAll(".imagens img")
-const indicador = document.querySelectorAll(".Indicador")
-let voltar = document.querySelector(".VoltarImg")
-let proximo = document.querySelector(".AvancarImg")
 
-function mostrarImagem(index) {
-    if (imagens.length > 0) {
-        imagens.forEach((Imagem, i) => {
-            Imagem.classList.remove("Ativo")//remove a classe "Ativo" colocada sobre a imagem ativa
-            indicador[i].classList.remove("Ativo")//remove a classe "Ativo" colocada sobre o indicador ativo
-            if (i === index) {
-                Imagem.classList.add("Ativo")//adiciona a classe "Ativo" na imagem atual
-                indicador[i].classList.add("Ativo")//adiciona a classe "Ativo" no indicador atual
-            }
-        })
-    }
-    //desativar o botão de voltar quando tiver na primeira imagem
-    if (index === 0) {
-        voltar.disabled = true;
-    } else {
-        voltar.disabled = false;
-    }
-    //desativar o botão de avançar imagem quando estiver na ultima imagem
-    if (index === imagens.length - 1) {
-        proximo.disabled = true;
-    } else {
-        proximo.disabled = false;
-    }
-}
-
-function proximaImagem() {
-    imagemAtual = (imagemAtual + 1) % imagens.length //adicionar +1 na variavel das imagens para avançar no carrossel
-    mostrarImagem(imagemAtual)//ligar a função mostrarImagem para mostrar a imagem
-}
-
-function voltarImagem() {
-    imagemAtual = (imagemAtual - 1) % imagens.length //subitrair -1 na variavel das imagens para voltar no carrossel
-    mostrarImagem(imagemAtual)
-}
-
-mostrarImagem(imagemAtual)
-
-//quiz
 const perguntas = [
     {
-        pergunta: "Nova pergunta exemplo 1",
+        pergunta: "Qual foi o formato do doce desenvolvido no Inova Gastro 2024? ",
         opcoes: [
-            { texto: "Opção 1", correta: false },
-            { texto: "Opção 2", correta: true },
-            { texto: "Opção 3", correta: false }
+            { texto: "Abacaxi", correta: false },
+            { texto: "Banana ", correta: true },
+            { texto: "Maçã", correta: false }
         ]
     },
     {
-        pergunta: "Nova pergunta exemplo 2",
+        pergunta: "Qual era o objetivo principal de criar doces em formas diferentes, como frutas? ",
         opcoes: [
-            { texto: "Opção A", correta: false },
-            { texto: "Opção B", correta: true },
-            { texto: "Opção C", correta: false }
+            { texto: "Aumentar a durabilidade dos doces", correta: false },
+            { texto: "Aumentar a experiência dos usuários ao consumir ", correta: true },
+            { texto: "Facilitar a produção em massa", correta: false }
         ]
     },
     {
-        pergunta: "Nova pergunta exemplo 3",
+        pergunta: "Qual foi o tipo de molde utilizado no desenvolvimento do doce em forma de banana? ",
         opcoes: [
-            { texto: "Opção X", correta: true },
-            { texto: "Opção Y", correta: false },
-            { texto: "Opção Z", correta: false }
+            { texto: "Molde de silicone", correta: true },
+            { texto: "Moldagem a vácuo ", correta: false },
+            { texto: "Molde de cerâmica", correta: false }
         ]
-    }
+    },
+    {
+        pergunta: "Qual era o foco do evento Inova Gastro 2024?  ",
+        opcoes: [
+            { texto: "Inovações em confeitaria e experiência do consumidor ", correta: true },
+            { texto: " Novas técnicas de panificação", correta: false },
+            { texto: " Tecnologias de culinária sustentável", correta: false }
+        ]
+    }   
 ]
 
 let perguntaAtual
